@@ -61,3 +61,27 @@ a {
   opacity: 0.2;
   position: fixed;
 }
+/* the content is parent for both main and about */
+/* We enable Flexbox on the .content by simply using display: flex . This makes both .side and
+.about Flexbox items. */
+
+/* The position: relative allows .content to appear above .wallpaper , and the min-height is
+here to make sure .content covers the whole page. */
+.content {
+  display: flex;
+  position: relative;
+  min-height: 100vh;
+}
+
+.side {
+  max-height: 20rem;
+  max-width: 20rem;
+}
+/* The use of max-width is very practical: it just means that at any point we don't want an element to by
+wider than a certain value. For readability reasons we want the .about section to never go beyond
+26rem in width (which is 26 x 16px = 676px ). Since it's a block element, it will use the whole width
+available up to a certain point. Depending on the length of your written content, you can play with the value
+here. */
+.about {
+  max-width: 26rem;
+}
