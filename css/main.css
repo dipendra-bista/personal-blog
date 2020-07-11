@@ -48,7 +48,9 @@ a {
 /* 2. Shared */
 /* this makes wallpaper covers the whole screen */
 /* This image is not displayed with an <img> tag because its purpose is decorative and belongs in the CSS. */
-.wallpaper {
+.wallpaper,
+.picture-shadow,
+.picture-image {
   display: block;
   height: 100%;
   left: 0;
@@ -88,6 +90,21 @@ here. */
 .about {
   max-width: 26rem;
 }
+.picture {
+  padding-top: 100%;
+  position: relative;
+  width: 100%;
+}
+.picture-shadow {
+  border-radius: 290486px;
+  background-image: radial-gradient(#000 0%, rgba(0, 0, 0, 0) 70%);
+  position: absolute;
+  top: 10%;
+}
+.picture-image {
+  border-radius: 290486px;
+  position: absolute;
+}
 /* 4. Responsiveness */
 /* on mobile, we're having a centered vertical layout
 on desktop, we're having a centered horizontal layout */
@@ -109,10 +126,19 @@ on desktop, we're having a centered horizontal layout */
 @media screen and (min-width: 800px) {
   .content {
     align-items: center;
+    /* justify-content appears twice because the space-evenly
+value is not available in all browsers, so we use space-around as a reasonable fallback. */
     justify-content: space-around;
     justify-content: space-evenly;
     padding: 4rem;
   }
+  /* The .side element (which contains the image), has fixed dimensions of a 20rem by 20rem square. If
+there's more horizontal space available, we don't want it to grow, hence the flex-grow: 0 . On the other
+hand, we also don't want it to shrink at all, otherwise, the image would be squased. That's why flex-
+shrink: 0 is used here too. */
+
+  /* We also
+want it to appear after the text content, which is why we use order: 2 */
   .side {
     flex-grow: 0;
     flex-shrink: 0;
@@ -121,6 +147,8 @@ on desktop, we're having a centered horizontal layout */
     order: 2;
     width: 20rem;
   }
+  /* For the .about , we do want it to use the remaining space available, in both directions, which is why
+flex-grow and flex-shrink have both a value of 1 . */
   .about {
     flex-grow: 1;
     flex-shrink: 1;
