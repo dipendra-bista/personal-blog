@@ -1,3 +1,37 @@
+/* 1. Base */
 html {
-  /* background-color: blue; */
+  /* the background and color declarations set the overall tone */
+  /* it usually work as the fall back for the background-image */
+  background-color: #5f45bb;
+  background-image: linear-gradient(to bottom right, #180cac, #d054e4);
+  color: #fff;
+
+  /* the font and text-shadow set the base typography */
+  /* The font-family property takes a list of possible families. If the Quicksand font is not available, the browser
+  will use the fallback font provided: sans-serif */
+  /* . This usually means Arial or Helvetica on Windows
+machines, San Francisco on Mac OS, and Ubuntu on Linux machines. Since your visitors will probably not
+have that font, we will include it using Google Fonts. */
+  font-family: "Quicksand", sans-serif;
+  font-size: 16px;
+  text-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+
+  /* the line-height and browser-specific font-smoothing declarations make the page more readable */
+  /* The line-height has a unitless value of 1.5 . It means each line of text will be 1.5 times the element's
+current font size. For most of the page, and combined with the font-size: 16px declaration, this will
+make each line of text 24px high */
+  line-height: 1.5;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+
+  /* the dimensions and overflow values ensure that the page fills up the whole viewport */
+
+  /* always have a min-width: 300px that prevents the page from being too narrow to be readable */
+  /* The min-height: 100vh ensures the page to be at least as tall as 100% of the viewport height ( vh ) */
+  /* The overflow-x: hidden declaration prevents the page from scrolling horizontally while preserving the
+usual vertical scroll. */
+  min-width: 300px;
+  min-height: 100vh;
+  
+  overflow-x: hidden;
 }
