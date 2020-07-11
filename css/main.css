@@ -57,7 +57,21 @@ a {
   top: 0;
   width: 100%;
 }
-
+/* We want the job title to stand out a bit. That's why we are going to use our secondary font: Montserrat.
+This font works well when the letters are uppercase and slightly spaced out. */
+.job,
+.button {
+  font-family: "Montserrat", "Quicksand", sans-serif;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+}
+/* We're setting some transformation and transition values shared between the button and the social links
+(which are coming later). */
+button,
+.social a {
+  transform-origin: center;
+  transition-duration: 100ms;
+}
 /* 3. Specific */
 .wallpaper {
   background-image: url("../images/austria.jpg");
@@ -105,6 +119,71 @@ here. */
   border-radius: 290486px;
   position: absolute;
 }
+.job {
+  color: #ffe479;
+  font-size: 0.75rem;
+}
+/* The horizontal rule ( hr ) defines a semantic break between blocks of text. While keeping this semantic
+value intact, we want to make this line more subtle: */
+
+/* For more control, we're removing the border and using the background-color with a height of 1px to
+define a thin short line.
+The transform-origin will be used when we animate the width later on. */
+.hr {
+  background-color: #ff470f;
+  border: none;
+  content: "";
+  height: 1px;
+  margin-bottom: 1.5rem;
+  margin-top: 1.5rem;
+  transform-origin: center left;
+  width: 4rem;
+}
+/* The description only needs to be slightly more prominent. Let's increase the font size: */
+.description {
+  font-size: 1.5rem;
+}
+/* By using display: inline-block we combine two behaviors:
+inline makes sure the width is equal to its content (the button)
+block makes sure surrounding elements will appear above and below
+it also allows us to use margin-top
+And vertical-align: top ensures the element to only use the vertical space required, and keeps the
+spacing tight. */
+.contact {
+  display: inline-block;
+  margin-top: 1.5rem;
+  vertical-align: top;
+}
+/* The button uses the same inline-block technique as its parent.
+The height of the button is proportional to the font size, and equal to 3.5 times the font size value:
+the unitless line-height is equal to 1 or 0.875rem
+the vertical paddings (top and bottom) are set to 1.25em each, or 1.25 times the font size
+The em unit is equal to the current font size. In this case, it's similar to the unitless line height value.
+If you play around with the font-size value, by setting 2rem for example, you'll notice that the button
+will resize proportionally. This is very useful because we only need to update a single value to
+increase/decrease the size of the button, while maintaining a perfect ratio.
+We also apply some other styles:
+because of the colored background and the darker text color, we remove the text-shadow
+we use user-select: none so the text content can't be selected, which can happen when clicking
+repeatedly on the button
+to make sure the text never is displayed on two lines, we use white-space: nowrap
+The transition-property and will-change values are for the button states. */
+.button {
+  background-color: #fff;
+  border-radius: 290486px;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+  color: #9013fe;
+  display: inline-block;
+  font-size: 0.875rem;
+  line-height: 1;
+  padding: 1.25em 2em;
+  text-shadow: none;
+  transition-property: box-shadow, transform;
+  user-select: none;
+  vertical-align: top;
+  white-space: nowrap;
+  will-change: box-shadow, transform;
+  }
 /* 4. Responsiveness */
 /* on mobile, we're having a centered vertical layout
 on desktop, we're having a centered horizontal layout */
@@ -153,4 +232,14 @@ flex-grow and flex-shrink have both a value of 1 . */
     flex-grow: 1;
     flex-shrink: 1;
   }
+}
+/* The font size uses the rem unit: it's the root value, equal to the font size set on the html element, which
+we previously set to 16px . So 2.25rem is essentially 36px . Using rem is useful because it references
+a common value, and we can update the html value to set all instances of rem values */
+/* The line-height is set to 1.125 It's hard to see its purpose if the text is too short (resize your browser
+to reach two lines), but keeping the page value of 1.5 makes the two lines too spaced out. */
+.name {
+  font-size: 2.25rem;
+  line-height: 1.125;
+  margin-bottom: 0.5rem;
 }
