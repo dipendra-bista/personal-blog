@@ -54,7 +54,10 @@ a {
   left: 0;
   top: 0;
   width: 100%;
+}
 
+/* 3. Specific */
+.wallpaper {
   background-image: url("../images/austria.jpg");
   background-position: center;
   background-size: cover;
