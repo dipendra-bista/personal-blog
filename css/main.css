@@ -183,7 +183,7 @@ The transition-property and will-change values are for the button states. */
   vertical-align: top;
   white-space: nowrap;
   will-change: box-shadow, transform;
-  }
+}
 /* 4. Responsiveness */
 /* on mobile, we're having a centered vertical layout
 on desktop, we're having a centered horizontal layout */
@@ -242,4 +242,43 @@ to reach two lines), but keeping the page value of 1.5 makes the two lines too s
   font-size: 2.25rem;
   line-height: 1.125;
   margin-bottom: 0.5rem;
+}
+/* The button is the main interaction element of the page. Visitors can hover the button and click on it. */
+/* The box shadow is transparent so it can work on any background color. For the transformation, we increase
+the button's size by 2% with scale(1.02) and move it upwards by a few pixels with
+translateY(-4px) .
+When clicking the button, we want to make it look as if it was pressed downwards. */
+.button:hover {
+  box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.2);
+  transform: scale(1.02) translateY(-4px);
+}
+/* If you reload the page repeatedly, you might notice that the layout "jumps" for a split second. That's because
+at first, the icons are not loaded, and the page only displays the text and the images. Then, when the icons
+finally load, the pop up, and cause the page to be redrawn, hence the jump.
+To avoid this jump, we're gonna set a square area of 2rem by 2rem for each <li> list item: */
+.social {
+  display: flex;
+  margin-top: 1.5rem;
+}
+.social li {
+  height: 2rem;
+  margin-right: 0.5rem;
+  text-align: center;
+  width: 2rem;
+}
+.social a {
+  align-items: center;
+  display: flex;
+  font-size: 1.5rem;
+  height: 2rem;
+  justify-content: center;
+  opacity: 0.5;
+  transition-property: opacity, transform;
+  width: 2rem;
+  will-change: opacity, transform;
+}
+/* As for the button, we're gonna add some hover and active styles: */
+.social a:hover {
+  opacity: 1;
+  transform: scale(1.25);
 }
