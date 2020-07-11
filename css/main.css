@@ -32,6 +32,15 @@ make each line of text 24px high */
 usual vertical scroll. */
   min-width: 300px;
   min-height: 100vh;
-  
+
   overflow-x: hidden;
+}
+/* Links are bydefault blue and underlined */
+/* Using currentColor is prefered because it will pick up the color set by html before: color: #fff */
+/* Sometimes, the hand cursor doesn't show up when hovering a link. That's why I always add cursor:
+pointer to force the hand to show up. */
+a {
+  color: currentColor;
+  cursor: pointer;
+  text-decoration: none;
 }
