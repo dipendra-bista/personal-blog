@@ -44,3 +44,20 @@ a {
   cursor: pointer;
   text-decoration: none;
 }
+
+/* 2. Shared */
+/* this makes wallpaper covers the whole screen */
+/* This image is not displayed with an <img> tag because its purpose is decorative and belongs in the CSS. */
+.wallpaper {
+  display: block;
+  height: 100%;
+  left: 0;
+  top: 0;
+  width: 100%;
+
+  background-image: url("../images/austria.jpg");
+  background-position: center;
+  background-size: cover;
+  opacity: 0.2;
+  position: fixed;
+}
