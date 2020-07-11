@@ -3,7 +3,8 @@ html {
   /* the background and color declarations set the overall tone */
   /* it usually work as the fall back for the background-image */
   background-color: #5f45bb;
-  background-image: linear-gradient(to bottom right, #180cac, #d054e4);
+  /* background-image: linear-gradient(to bottom right, #180cac, #d054e4); */
+  background-image: linear-gradient(to bottom right, #06041f, #180cac);
   color: #fff;
 
   /* the font and text-shadow set the base typography */
